@@ -74,7 +74,7 @@ export class WorkbenchRouter {
         mapToBody(),
         catchError(error => throwError(error instanceof RequestError ? error.message : error)),
       )
-      .toPromise();
+      .toPromise() as Promise<boolean>;
   }
 
   private async updateViewParams(extras?: WorkbenchNavigationExtras): Promise<boolean> {
@@ -92,7 +92,7 @@ export class WorkbenchRouter {
         mapToBody(),
         catchError(error => throwError(error instanceof RequestError ? error.message : error)),
       )
-      .toPromise();
+      .toPromise() as Promise<boolean>;
   }
 
   private isSelfNavigation(qualifier: Qualifier | {}): boolean {

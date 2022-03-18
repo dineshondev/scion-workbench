@@ -86,6 +86,6 @@ export class WorkbenchMessageBoxService {
         mapToBody(),
         catchError(error => throwError(error instanceof RequestError ? error.message : error)),
       )
-      .toPromise();
+      .toPromise() as Promise<R>;
   }
 }

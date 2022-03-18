@@ -71,6 +71,6 @@ class Task<T = any> {
   }
 
   public await(): Promise<T> {
-    return this._done$.toPromise();
+    return this._done$.toPromise() as Promise<T>;
   }
 }

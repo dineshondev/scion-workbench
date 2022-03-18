@@ -93,7 +93,7 @@ export class WorkbenchPopupService {
           catchError(error => throwError(error instanceof RequestError ? error.message : error)),
           takeUntil(view ? viewClosing$ : NEVER),
         )
-        .toPromise();
+        .toPromise() as T;
     }
     finally {
       popupOriginPublisher.unsubscribe();
@@ -120,7 +120,7 @@ export class WorkbenchPopupService {
           right: origin.x + (origin.width || 0),
           width: origin.width || 0,
           height: origin.height || 0,
-        })));
+        }) as ClientRect));
     }
   }
 }
