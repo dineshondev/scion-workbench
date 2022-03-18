@@ -61,7 +61,7 @@ export class ViewMenuService {
    */
   public async showMenu(location: Point, viewId: string): Promise<boolean> {
     const view = this._viewRegistry.getElseThrow(viewId);
-    const menuItems = await view.menuItems$.pipe(take(1)).toPromise();
+    const menuItems = await view.menuItems$.pipe(take(1)).toPromise() as WorkbenchMenuItem[];
 
     // Do not show the menu if there are no menu items registered.
     if (menuItems.length === 0) {

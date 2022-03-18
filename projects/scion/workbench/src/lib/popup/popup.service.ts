@@ -76,7 +76,7 @@ export class PopupService {
 
     // Set up the popup positioning strategy.
     const overlayPositionStrategy = this._overlay.position()
-      .flexibleConnectedTo(await anchor$.pipe(take(1)).toPromise())
+      .flexibleConnectedTo(await anchor$.pipe(take(1)).toPromise() as PopupOrigin)
       .withFlexibleDimensions(false)
       .withLockedPosition(false) // If locked, the popup won't attempt to reposition itself if not enough space available.
       .withPositions(((): ConnectedPosition[] => {

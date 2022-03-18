@@ -22,7 +22,7 @@ import {WorkbenchTestingModule} from './workbench-testing.module';
 
 /**
  *
- * Testsetup:
+ * Test setup:
  *
  * +------------------------------------+
  * | Test Module                        |

@@ -129,6 +129,10 @@ export class WbComponentPortal<T> {
    * Destroys the component instance and all of the data structures associated with it.
    */
   public destroy(): void {
+    // TODO: remove this workaround
+    if (!this._componentRef) {
+      return;
+    }
     this.componentRef.destroy();
   }
 

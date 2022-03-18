@@ -9,9 +9,9 @@
  */
 
 import {discardPeriodicTasks, fakeAsync, inject, TestBed, waitForAsync} from '@angular/core/testing';
-import {Component, Inject, Injectable, InjectionToken, NgModule, NgModuleFactoryLoader, Optional} from '@angular/core';
+import {Component, Inject, Injectable, InjectionToken, NgModule, Optional} from '@angular/core';
 import {expect, jasmineCustomMatchers} from './util/jasmine-custom-matchers.spec';
-import {RouterTestingModule, SpyNgModuleFactoryLoader} from '@angular/router/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 import {Router, RouterModule} from '@angular/router';
 import {WorkbenchRouter} from '../routing/workbench-router.service';
 import {CommonModule} from '@angular/common';
@@ -23,7 +23,7 @@ import {WorkbenchTestingModule} from './workbench-testing.module';
 
 /**
  *
- * Testsetup:
+ * Test setup:
  *
  *            +--------------+
  *            | Test Module  |
@@ -54,14 +54,7 @@ describe('Lazily loaded view', () => {
     TestBed.inject(Router).initialNavigation();
   }));
 
-  // TODO [Angular 9]:
-  // As of Angular 8.0 there is no workaround to configure lazily loaded routes without using `NgModuleFactoryLoader`.
-  // See Angular internal tests in `integration.spec.ts` file.
-  it('should get services injected from its child injector', fakeAsync(inject([WorkbenchRouter, NgModuleFactoryLoader], (wbRouter: WorkbenchRouter, loader: SpyNgModuleFactoryLoader) => {
-    loader.stubbedModules = {
-      './feature/feature.module': FeatureModule,
-    };
-
+  it('should get services injected from its child injector', fakeAsync(inject([WorkbenchRouter], (wbRouter: WorkbenchRouter) => {
     const fixture = TestBed.createComponent(AppComponent);
     advance(fixture);
 
@@ -87,16 +80,8 @@ describe('Lazily loaded view', () => {
 
   /**
    * Verifies that a service provided in the lazily loaded module should be preferred over the service provided in the root module.
-   *
-   * TODO [Angular 9]:
-   * As of Angular 8.0 there is no workaround to configure lazily loaded routes without using `NgModuleFactoryLoader`.
-   * See Angular internal tests in `integration.spec.ts` file.
    */
-  it('should get services injected from its child injector prior to from the root injector', fakeAsync(inject([WorkbenchRouter, NgModuleFactoryLoader], (wbRouter: WorkbenchRouter, loader: SpyNgModuleFactoryLoader) => {
-    loader.stubbedModules = {
-      './feature/feature.module': FeatureModule,
-    };
-
+  it('should get services injected from its child injector prior to from the root injector', fakeAsync(inject([WorkbenchRouter], (wbRouter: WorkbenchRouter) => {
     const fixture = TestBed.createComponent(AppComponent);
     advance(fixture);
 
@@ -146,7 +131,7 @@ export class FeatureService {
     WorkbenchTestingModule.forRoot({startup: {launcher: 'APP_INITIALIZER'}}),
     NoopAnimationsModule,
     RouterTestingModule.withRoutes([
-      {path: 'feature', loadChildren: './feature/feature.module'},
+      {path: 'feature', loadChildren: () => FeatureModule},
     ]),
   ],
   declarations: [AppComponent],
