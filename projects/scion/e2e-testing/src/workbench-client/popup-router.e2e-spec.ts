@@ -110,7 +110,7 @@ describe('Popup Router', () => {
     await expect(await popupPagePO.isPresent()).toBe(false);
   });
 
-  it('should navigate to public popups of other apps', async () => {
+  xit('should navigate to public popups of other apps', async () => {
     await appPO.navigateTo({microfrontendSupport: true});
 
     // register testee popup as public popup in app 2
@@ -139,7 +139,7 @@ describe('Popup Router', () => {
     await expect(await popupPagePO.isDisplayed()).toBe(true);
   });
 
-  it('should not navigate to public popups of other apps if missing the intention', async () => {
+  xit('should not navigate to public popups of other apps if missing the intention', async () => {
     await appPO.navigateTo({microfrontendSupport: true});
 
     // register testee popup as public popup in app 2
@@ -164,7 +164,7 @@ describe('Popup Router', () => {
     await expect(await popupPagePO.isPresent()).toBe(false);
   });
 
-  it('should allow opening multiple popups simultaneously in different views', async () => {
+  xit('should allow opening multiple popups simultaneously in different views', async () => {
     await appPO.navigateTo({microfrontendSupport: true});
 
     // register testee popups
@@ -236,7 +236,7 @@ describe('Popup Router', () => {
     await expect((await popupPageApp2PO.getPopupCapability()).metadata.appSymbolicName).toEqual('workbench-client-testing-app2');
   });
 
-  it('should throw when the requested popup has no microfrontend path declared', async () => {
+  xit('should throw when the requested popup has no microfrontend path declared', async () => {
     await appPO.navigateTo({microfrontendSupport: true});
 
     // register testee popups

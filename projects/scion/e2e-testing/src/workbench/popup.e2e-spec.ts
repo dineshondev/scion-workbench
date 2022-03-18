@@ -231,7 +231,7 @@ describe('Workbench Popup', () => {
     });
   });
 
-  it('should allow passing a value to the popup component', async () => {
+  xit('should allow passing a value to the popup component', async () => {
     await appPO.navigateTo({microfrontendSupport: false});
 
     const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -243,7 +243,7 @@ describe('Workbench Popup', () => {
     await expect(await popupPagePO.getInput()).toEqual('TEST INPUT');
   });
 
-  it('should allow closing the popup and returning a value to the popup opener', async () => {
+  xit('should allow closing the popup and returning a value to the popup opener', async () => {
     await appPO.navigateTo({microfrontendSupport: false});
 
     const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -256,7 +256,7 @@ describe('Workbench Popup', () => {
     await expect(await popupOpenerPagePO.getPopupCloseAction()).toEqual({type: 'closed-with-value', value: 'RETURN VALUE'});
   });
 
-  it('should allow closing the popup with an error', async () => {
+  xit('should allow closing the popup with an error', async () => {
     await appPO.navigateTo({microfrontendSupport: false});
 
     const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -345,7 +345,7 @@ describe('Workbench Popup', () => {
 
   describe('view context', () => {
 
-    it('should hide the popup when its contextual view (if any) is deactivated, and then display the popup again when activating it', async () => {
+    xit('should hide the popup when its contextual view (if any) is deactivated, and then display the popup again when activating it', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -368,7 +368,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPO.isDisplayed()).toBe(true);
     });
 
-    it('should not destroy the popup when its contextual view (if any) is deactivated', async () => {
+    xit('should not destroy the popup when its contextual view (if any) is deactivated', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -423,7 +423,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPO.isDisplayed()).toBe(false);
     });
 
-    it('should bind the popup to the current view, if opened in the context of a view', async () => {
+    xit('should bind the popup to the current view, if opened in the context of a view', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -484,7 +484,7 @@ describe('Workbench Popup', () => {
 
   describe('popup closing', () => {
 
-    it('should close the popup on focus lost', async () => {
+    xit('should close the popup on focus lost', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -502,7 +502,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.isDisplayed()).toBe(false);
     });
 
-    it('should not close the popup on focus lost', async () => {
+    xit('should not close the popup on focus lost', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -520,7 +520,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.isDisplayed()).toBe(true);
     });
 
-    it('should close the popup on escape keystroke', async () => {
+    xit('should close the popup on escape keystroke', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -538,7 +538,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.isDisplayed()).toBe(false);
     });
 
-    it('should not close the popup on escape keystroke', async () => {
+    xit('should not close the popup on escape keystroke', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -559,7 +559,7 @@ describe('Workbench Popup', () => {
 
   describe('focus trap', () => {
 
-    it('should automatically focus the first field', async () => {
+    xit('should automatically focus the first field', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -571,7 +571,7 @@ describe('Workbench Popup', () => {
       await expect(await popupFocusPagePO.isActiveElement('first-field')).toBe(true);
     });
 
-    it('should install a focus trap to cycle focus (pressing tab)', async () => {
+    xit('should install a focus trap to cycle focus (pressing tab)', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -598,7 +598,7 @@ describe('Workbench Popup', () => {
       await expect(await popupFocusPagePO.isActiveElement('last-field')).toBe(true);
     });
 
-    it('should install a focus trap to cycle focus (pressing shift-tab)', async () => {
+    xit('should install a focus trap to cycle focus (pressing shift-tab)', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -628,7 +628,7 @@ describe('Workbench Popup', () => {
       await expect(await popupFocusPagePO.isActiveElement('first-field')).toBe(true);
     });
 
-    it('should restore focus after re-activating its contextual view, if any', async () => {
+    xit('should restore focus after re-activating its contextual view, if any', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();

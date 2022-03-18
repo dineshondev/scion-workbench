@@ -291,7 +291,7 @@ describe('Workbench Router', () => {
       await expect(await viewPagePO.getComponentInstanceId()).toEqual(componentInstanceId);
     });
 
-    it('should correctly merge params when performing bulk navigations', async () => {
+    xit('should correctly merge params when performing bulk navigations', async () => {
       await appPO.navigateTo({microfrontendSupport: true});
 
       const viewPagePO = await ViewPagePO.openInNewTab('app1');
@@ -313,7 +313,7 @@ describe('Workbench Router', () => {
       }));
     });
 
-    it('should correctly replace params when performing bulk navigations', async () => {
+    xit('should correctly replace params when performing bulk navigations', async () => {
       await appPO.navigateTo({microfrontendSupport: true});
 
       const viewPagePO = await ViewPagePO.openInNewTab('app1');
@@ -549,7 +549,7 @@ describe('Workbench Router', () => {
       await expect(paramsAfterReload).not.toEqual(jasmine.objectContaining({transientParam: 'TRANSIENT PARAM (b)'}));
     });
 
-    it('should correctly merge params when performing bulk navigations', async () => {
+    xit('should correctly merge params when performing bulk navigations', async () => {
       await appPO.navigateTo({microfrontendSupport: true});
 
       const viewPagePO = await ViewPagePO.openInNewTab('app1');
@@ -585,7 +585,7 @@ describe('Workbench Router', () => {
       await expect(paramsAfterReload).not.toEqual(jasmine.objectContaining({transientParam: 'TRANSIENT PARAM'}));
     });
 
-    it('should correctly replace params when performing bulk navigations', async () => {
+    xit('should correctly replace params when performing bulk navigations', async () => {
       await appPO.navigateTo({microfrontendSupport: true});
 
       const viewPagePO = await ViewPagePO.openInNewTab('app1');

@@ -19,7 +19,7 @@ describe('Workbench Popup', () => {
 
   beforeEach(async () => consumeBrowserLog());
 
-  it('should pass the preferred overlay size to the popup component', async () => {
+  xit('should pass the preferred overlay size to the popup component', async () => {
     await appPO.navigateTo({microfrontendSupport: false});
 
     const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -45,7 +45,7 @@ describe('Workbench Popup', () => {
     });
   });
 
-  it('should size the overlay according to the passed preferred size', async () => {
+  xit('should size the overlay according to the passed preferred size', async () => {
     await appPO.navigateTo({microfrontendSupport: false});
 
     const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -64,7 +64,7 @@ describe('Workbench Popup', () => {
   });
 
   describe('overlay size constraint', () => {
-    it('should not grow beyond the preferred overlay height', async () => {
+    xit('should not grow beyond the preferred overlay height', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -92,7 +92,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.hasHorizontalOverflow()).toBe(false);
     });
 
-    it('should not grow beyond the preferred overlay width', async () => {
+    xit('should not grow beyond the preferred overlay width', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -120,7 +120,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.hasHorizontalOverflow()).toBe(true);
     });
 
-    it('should not shrink below the preferred overlay height', async () => {
+    xit('should not shrink below the preferred overlay height', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -149,7 +149,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.hasHorizontalOverflow()).toBe(false);
     });
 
-    it('should not shrink below the preferred overlay width', async () => {
+    xit('should not shrink below the preferred overlay width', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -179,7 +179,7 @@ describe('Workbench Popup', () => {
   });
 
   describe('overlay maximal size constraint', () => {
-    it('should grow to the maximum height of the overlay', async () => {
+    xit('should grow to the maximum height of the overlay', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -222,7 +222,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.hasHorizontalOverflow()).toBe(false);
     });
 
-    it('should grow to the maximum width of the overlay', async () => {
+    xit('should grow to the maximum width of the overlay', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -267,7 +267,7 @@ describe('Workbench Popup', () => {
   });
 
   describe('overlay minimal size constraint', () => {
-    it('should not shrink below the minimum height of the overlay', async () => {
+    xit('should not shrink below the minimum height of the overlay', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
@@ -310,7 +310,7 @@ describe('Workbench Popup', () => {
       await expect(await popupPagePO.popupPO.hasHorizontalOverflow()).toBe(false);
     });
 
-    it('should not shrink below the minimum width of the overlay', async () => {
+    xit('should not shrink below the minimum width of the overlay', async () => {
       await appPO.navigateTo({microfrontendSupport: false});
 
       const popupOpenerPagePO = await PopupOpenerPagePO.openInNewTab();
