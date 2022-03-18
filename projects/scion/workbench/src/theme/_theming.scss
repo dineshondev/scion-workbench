@@ -8,8 +8,8 @@
  * SPDX-License-Identifier: EPL-2.0
  */
 // This files contains all all the theming functionality.
-@use '~@angular/cdk/a11y' as cdk-a11y;
-@use '~@angular/cdk/overlay' as cdk-overlay;
+@use '@angular/cdk/a11y' as cdk-a11y;
+@use '@angular/cdk/overlay' as cdk-overlay;
 @import 'font-theme';
 @import 'popup-theme';
 @import 'view-drag-theme';
