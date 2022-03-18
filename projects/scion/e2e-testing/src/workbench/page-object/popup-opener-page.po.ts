@@ -10,11 +10,12 @@
 
 import {assertPageToDisplay, enterText, selectOption} from '../../helper/testing.util';
 import {AppPO, ViewPO, ViewTabPO} from '../../app.po';
-import {SciAccordionPO, SciCheckboxPO} from '@scion/toolkit.internal/widgets.po';
 import {ElementFinder} from 'protractor';
 import {WebdriverExecutionContexts} from '../../helper/webdriver-execution-context';
-import {coerceArray} from '@angular/cdk/coercion';
 import {PopupOrigin, PopupSize} from '@scion/workbench';
+import {SciAccordionPO} from '../../../deps/scion/toolkit.internal/accordion/accordion.po';
+import {SciCheckboxPO} from '../../../deps/scion/toolkit.internal/checkbox/checkbox.po';
+import {coerceArray} from '../../../deps/angular/cdk/coercion/array';
 
 /**
  * Page object to interact {@link PopupOpenerPageComponent}.
@@ -209,7 +210,7 @@ export class PopupOpenerPagePO {
       bottom: y + height,
       width,
       height,
-    };
+    } as ClientRect;
   }
 
   /**

@@ -10,12 +10,14 @@
 
 import {assertPageToDisplay, enterText, selectOption} from '../../helper/testing.util';
 import {AppPO, ViewPO, ViewTabPO} from '../../app.po';
-import {SciAccordionPO, SciCheckboxPO, SciParamsEnterPO} from '@scion/toolkit.internal/widgets.po';
 import {$, browser, ElementFinder} from 'protractor';
 import {WebdriverExecutionContexts} from '../../helper/webdriver-execution-context';
 import {Qualifier} from '@scion/microfrontend-platform';
 import {PopupOrigin} from '@scion/workbench';
-import {Dictionary} from '@scion/toolkit/util';
+import {SciParamsEnterPO} from '../../../deps/scion/toolkit.internal/params-enter/params-enter.po';
+import {Dictionary} from '../../../deps/scion/toolkit/dictionaries.util';
+import {SciAccordionPO} from '../../../deps/scion/toolkit.internal/accordion/accordion.po';
+import {SciCheckboxPO} from '../../../deps/scion/toolkit.internal/checkbox/checkbox.po';
 
 /**
  * Page object to interact {@link PopupOpenerPageComponent}.
@@ -197,7 +199,7 @@ export class PopupOpenerPagePO {
       bottom: y + height,
       width,
       height,
-    };
+    } as ClientRect;
   }
 
   /**

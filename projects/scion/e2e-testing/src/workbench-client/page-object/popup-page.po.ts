@@ -13,11 +13,12 @@ import {AppPO, PopupPO} from '../../app.po';
 import {$, ElementFinder} from 'protractor';
 import {WebdriverExecutionContexts} from '../../helper/webdriver-execution-context';
 import {PopupSize} from '@scion/workbench';
-import {SciAccordionPO, SciPropertyPO} from '@scion/toolkit.internal/widgets.po';
 import {ISize} from 'selenium-webdriver';
 import {Params} from '@angular/router';
 import {WorkbenchPopupCapability} from '@scion/workbench-client';
 import {RouterOutletPO} from './router-outlet.po';
+import {SciAccordionPO} from '../../../deps/scion/toolkit.internal/accordion/accordion.po';
+import {SciPropertyPO} from '../../../deps/scion/toolkit.internal/property/property.po';
 
 /**
  * Page object to interact {@link PopupPageComponent}.

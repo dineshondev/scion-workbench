@@ -11,9 +11,10 @@
 import {$, $$, browser, Button, ElementFinder, Key, protractor} from 'protractor';
 import {getCssClasses, isActiveElement, isCssClassPresent, runOutsideAngularSynchronization} from './helper/testing.util';
 import {StartPagePO} from './start-page.po';
-import {coerceArray, coerceBooleanProperty} from '@angular/cdk/coercion';
 import {WebdriverExecutionContexts} from './helper/webdriver-execution-context';
-import {Dictionary} from '@scion/toolkit/util';
+import {Dictionary} from '../deps/scion/toolkit/dictionaries.util';
+import {coerceBooleanProperty} from '../deps/angular/cdk/coercion/boolean-property';
+import {coerceArray} from '../deps/angular/cdk/coercion/array';
 
 export class AppPO {
 
@@ -323,7 +324,7 @@ export class AppPO {
           bottom: y + height,
           width,
           height,
-        };
+        } as ClientRect;
       }
 
       public async getAlign(): Promise<'east' | 'west' | 'north' | 'south'> {
@@ -416,7 +417,7 @@ export class AppPO {
           bottom: y + height,
           width,
           height,
-        };
+        } as ClientRect;
       }
 
       public async getTitle(): Promise<string> {
@@ -507,7 +508,7 @@ export class AppPO {
           bottom: y + height,
           width,
           height,
-        };
+        } as ClientRect;
       }
 
       public async getTitle(): Promise<string> {
